@@ -12,26 +12,25 @@ export default function WorkProcess() {
     {
       number: "01",
       title: "Research",
-      description:
-        "Branding can change how people perceive your brand, it can drive new",
+      description: " We analyze trends, competitors & audience insights.",
       color: "bg-blue-50 text-blue-500",
     },
     {
       number: "02",
       title: "Idea",
-      description: "Branding is absolutely critical to a business because",
+      description: "We craft powerful marketing campaigns",
       color: "bg-emerald-50 text-emerald-500",
     },
     {
       number: "03",
       title: "Develop",
-      description: "Let's imagine an e-commerce startup—we'll call",
+      description: "We run & optimize for the best results",
       color: "bg-teal-400 text-white",
     },
     {
       number: "04",
       title: "Launch",
-      description: "Let's imagine an e-commerce startup—we'll call",
+      description: "We scale your brand for long-term success",
       color: "bg-pink-100 text-pink-500",
     },
   ];
@@ -44,8 +43,9 @@ export default function WorkProcess() {
       <div className="text-center  mb-16">
         <h3 className="text-4xl text-white font-bold mb-6">Our Work Process</h3>
         <p className="text-muted-foreground max-w-2xl mx-auto text-white">
-          Get the most of reduction in your team's operating costs for the whole
-          product which creates amazing UI/UX experiences.
+          Maximize your marketing potential while reducing operational costs.
+          Our strategic approach ensures impactful digital experiences that
+          drive engagement and growth.
         </p>
       </div>
 
@@ -56,7 +56,7 @@ export default function WorkProcess() {
         </div>
 
         <div className="grid md:grid-cols-4 gap-8 relative">
-          {steps.map((step, index) => (
+          {steps.map((step) => (
             <div key={step.number} className="relative">
               <div className="flex flex-col items-center">
                 <div

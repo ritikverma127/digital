@@ -1,33 +1,40 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
-import { ChevronUp, ChevronDown } from "lucide-react";
+import Image from "next/image";
+import { useState, useEffect, useRef, useCallback } from "react";
+// import { ChevronUp, ChevronDown } from "lucide-react";
 
-const VerticalAutoImageSlider = ({ images, interval = 5000 }) => {
+const VerticalAutoImageSlider = ({
+  images,
+  interval,
+}: {
+  images: string[];
+  interval?: number;
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const [touchStart, setTouchStart] = useState(null);
-  const [touchEnd, setTouchEnd] = useState(null);
+  const [touchStart, setTouchStart] = useState<number | null | undefined>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null | undefined>(null);
   const sliderRef = useRef(null);
 
   // Function to move to the next slide
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     setCurrentIndex((prevIndex) =>
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     );
-  };
+  }, [images]);
 
   // Function to move to the previous slide
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
-  };
+  }, [images]);
 
   // Function to handle dot click
-  const goToSlide = (index) => {
-    setCurrentIndex(index);
-  };
+  // const goToSlide = (index) => {
+  //   setCurrentIndex(index);
+  // };
 
   // Auto-advance the slider when not paused
   useEffect(() => {
@@ -40,15 +47,16 @@ const VerticalAutoImageSlider = ({ images, interval = 5000 }) => {
         clearInterval(timer);
       };
     }
-  }, [interval, isPaused]);
+  }, [interval, isPaused, nextSlide, prevSlide]);
 
   // Handle touch events for swipe
-  const handleTouchStart = (e) => {
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     setTouchStart(e.targetTouches[0].clientY);
   };
 
-  const handleTouchMove = (e) => {
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     setTouchEnd(e.targetTouches[0].clientY);
+    nextSlide();
   };
 
   const handleTouchEnd = () => {
@@ -96,9 +104,11 @@ const VerticalAutoImageSlider = ({ images, interval = 5000 }) => {
       >
         {images.map((image, index) => (
           <div key={index} className="flex-shrink-0 w-full h-full">
-            <img
+            <Image
               src={image}
               alt={`Slide ${index + 1}`}
+              width={1000}
+              height={1000}
               className="w-full h-full object-cover"
               loading={index === 0 ? "eager" : "lazy"}
             />

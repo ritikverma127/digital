@@ -1,10 +1,13 @@
 "use client";
-
+import { lazy } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import VerticalAutoImageSlider from "../../../components/ui/AutoImageslider";
+
+const VerticalAutoImageSlider = lazy(
+  () => import("../../../components/ui/AutoImageslider")
+);
 
 export default function ContactPage() {
   // Sample image URLs - replace these with your actual image paths
@@ -23,11 +26,11 @@ export default function ContactPage() {
           <div className="text-center mb-6">
             <h1 className="text-2xl md:text-4xl font-bold">
               Contact Us
-              <div className="h-1 w-20 md:w-24 bg-blue-400 mx-auto mt-1"></div>
+              <div className="h-1 w-20 md:w-36 bg-blue-400 mx-auto mt-1"></div>
             </h1>
-            <h2 className="text-lg md:text-2xl font-bold mb-3">
+            {/* <h2 className="text-lg md:text-2xl font-bold mb-3">
               Let&apos;s get in touch!
-            </h2>
+            </h2> */}
           </div>
           <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
             <div>
@@ -79,7 +82,7 @@ export default function ContactPage() {
 
       {/* Vertical Image Slider - Right Side */}
       <div className="w-full md:w-1/2 h-64 hidden md:block   md:h-full">
-        <VerticalAutoImageSlider images={sliderImages} interval={5000} />
+        <VerticalAutoImageSlider images={sliderImages} interval={4000} />
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import Loader from "../ui/loader";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 
 interface BlogPost {
   title: string;
@@ -16,8 +16,7 @@ async function fetchProducts() {
   const res = await axios.get(
     "https://dummy-api-f49w.onrender.com/api/products"
   );
-  const data = await res.data;
-  return data;
+  return res.data;
 }
 
 export default function BlogGrid() {
@@ -31,13 +30,22 @@ export default function BlogGrid() {
   const loaderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (data && data.length > 0) {
+    if (data?.length) {
       setVisibleUsers(data.slice(0, 12));
     }
   }, [data]);
 
+  const loadMoreUsers = useCallback(() => {
+    setPage((prevPage) => {
+      const nextPage = prevPage + 1;
+      setVisibleUsers(data?.slice(0, nextPage * 12) || []);
+      console.log(page);
+      return nextPage;
+    });
+  }, [data]);
+
   useEffect(() => {
-    if (!data) return;
+    if (typeof window === "undefined" || !data) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -48,23 +56,13 @@ export default function BlogGrid() {
       { threshold: 0.5 }
     );
 
-    if (loaderRef.current) {
-      observer.observe(loaderRef.current);
-    }
+    const currentRef = loaderRef.current;
+    if (currentRef) observer.observe(currentRef);
 
     return () => {
-      if (loaderRef.current) {
-        observer.disconnect();
-      }
+      if (currentRef) observer.unobserve(currentRef);
     };
-  }, [visibleUsers, data]);
-
-  const loadMoreUsers = () => {
-    const nextPage = page + 1;
-    const newUsers = data.slice(0, nextPage * 12);
-    setVisibleUsers(newUsers);
-    setPage(nextPage);
-  };
+  }, [visibleUsers, data, loadMoreUsers]);
 
   if (isLoading) return <Loader />;
   if (isError) {

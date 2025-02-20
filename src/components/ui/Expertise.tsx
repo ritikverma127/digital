@@ -13,7 +13,7 @@ interface SlideData {
 
 const slides: SlideData[] = [
   {
-    id: "deploy",
+    id: "1",
     number: "01",
     title: "Healthcare & Fitness",
     img: "/carosel1.jpg",
@@ -21,7 +21,7 @@ const slides: SlideData[] = [
       "Leveraging smart technologies like AI, ML, IoT, and more to empower global health organizations.",
   },
   {
-    id: "ideation",
+    id: "2",
     number: "02",
     title: "Logistics and Distribution",
     img: "/carosel2.jpg",
@@ -29,7 +29,7 @@ const slides: SlideData[] = [
       "Bring your logistic industry-specific development requirements to get unique customer-centric solutions.",
   },
   {
-    id: "plan",
+    id: "3",
     number: "03",
     title: "Social Networking",
     img: "/carosel3.jpg",
@@ -37,7 +37,7 @@ const slides: SlideData[] = [
       "Build engaging and seasoned social media applications that can offer a unique user experience.",
   },
   {
-    id: "design",
+    id: "4",
     number: "04",
     title: "Real Estate",
     img: "/carosel4.jpg",
@@ -45,7 +45,7 @@ const slides: SlideData[] = [
       "Get cutting-edge real-estate solutions designed specifically to meet your unique business requirements.",
   },
   {
-    id: "develop",
+    id: "5",
     number: "05",
     title: "Travel and Hospitality",
     img: "/carosel5.jpg",
@@ -53,7 +53,7 @@ const slides: SlideData[] = [
       "Deliver seamless travel experience along with seamless user experience with top-notch features.",
   },
   {
-    id: "deploy",
+    id: "6",
     number: "06",
     title: "Food and Restaurant",
     img: "/carosel6.jpg",
@@ -61,7 +61,7 @@ const slides: SlideData[] = [
       "Building innovative solutions for businesses belonging to food and restaurants that can help them scale up.",
   },
   {
-    id: "deploy",
+    id: "7",
     number: "07",
     title: "On-Demand and Solutions",
     img: "/carosel7.jpg",
@@ -69,7 +69,7 @@ const slides: SlideData[] = [
       "Leveraging our development expertise to build astute on-demand solutions.",
   },
   {
-    id: "deploy",
+    id: "8",
     number: "08",
     title: "Gaming",
     img: "/carosel8.jpg",
@@ -77,7 +77,7 @@ const slides: SlideData[] = [
       "Integrating innovative tech stacks with our development expertise to build interactive gaming solutions.",
   },
   {
-    id: "deploy",
+    id: "9",
     number: "09",
     title: "Retail and Ecommerce",
     img: "/carosel9.jpg",
@@ -88,7 +88,7 @@ const slides: SlideData[] = [
 
 export default function Carousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
@@ -154,6 +154,7 @@ export default function Carousel() {
           <AnimatePresence mode="wait">
             <motion.div
               key={currentSlide}
+              layoutId={`slide-${currentSlide}`} // Ye ensure karega ki same layout maintain ho
               className="w-full md:w-1/2 h-[400px] md:h-[450px] lg:h-[500px] bg-white dark:bg-gray-800 rounded-xl shadow-2xl overflow-hidden mx-0 md:mx-4"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}

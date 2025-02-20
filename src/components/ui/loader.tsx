@@ -11,7 +11,7 @@ const Loader = () => {
           {/* Video Info */}
           <div className="flex gap-4">
             {/* Channel Icon */}
-            <div className="w-12 h-12 bg-gray-300 animate-pulse rounded-full"></div>
+            <div className="w-12 h-10 ml-3 bg-gray-300 animate-pulse rounded-full"></div>
 
             {/* Text Info */}
             <div className="flex flex-col gap-2 w-full">

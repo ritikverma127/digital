@@ -1,31 +1,44 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { BarChart3, Globe2, NewspaperIcon, Target } from "lucide-react";
+import { BarChart3, Globe2, Newspaper, Target } from "lucide-react";
 
-const FeatureCard = ({ icon: Icon, title, description }) => {
+// Define proper TypeScript interfaces
+interface FeatureCardProps {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+}
+
+interface Feature {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+}
+
+const FeatureCard: React.FC<FeatureCardProps> = ({
+  icon: Icon,
+  title,
+  description,
+}) => {
   return (
-    <div className="group p-6 space-y-4 rounded-xl transition-all duration-300  ">
-      {/* Base container with responsive alignment */}
+    <div className="group p-6 space-y-4 rounded-xl transition-all duration-300">
       <div className="grid text-center sm:text-left">
-        {/* Icon container */}
         <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600 text-white transform transition-transform duration-300 group-hover:scale-110 mx-auto sm:mx-0">
           <Icon className="h-6 w-6" />
         </div>
 
-        {/* Title */}
         <h3 className="text-xl font-semibold text-[#1a2b49] transition-colors duration-300 group-hover:text-blue-600 mt-4">
           {title}
         </h3>
 
-        {/* Description */}
         <p className="text-gray-600 mt-2">{description}</p>
       </div>
     </div>
   );
 };
 
-export default function TaboolaLanding() {
-  const features = [
+const TaboolaLanding: React.FC = () => {
+  const features: Feature[] = [
     {
       icon: BarChart3,
       title: "Performance at Scale",
@@ -39,7 +52,7 @@ export default function TaboolaLanding() {
         "Access 22,000+ exclusive and trusted websites worldwide with Taboola Ads.",
     },
     {
-      icon: NewspaperIcon,
+      icon: Newspaper,
       title: "Largest Native Ads Network",
       description:
         "Get your ad in front of 600M daily active users. Complement your search and social campaigns with new converting audiences.",
@@ -58,7 +71,7 @@ export default function TaboolaLanding() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           <div className="flex flex-col justify-center space-y-8 lg:max-w-2xl">
             <div className="text-center lg:text-left">
-              <h1 className="text-4xl font-bold tracking-tight text-[#1a2b49] md:text-5xl lg:text-6xl animate-fade-in">
+              <h1 className="text-4xl font-bold tracking-tight text-[#1a2b49] md:text-5xl lg:text-6xl">
                 Get up to{" "}
                 <span className="text-blue-600">70% more conversions</span> with
                 Taboola
@@ -95,4 +108,6 @@ export default function TaboolaLanding() {
       </div>
     </section>
   );
-}
+};
+
+export default TaboolaLanding;

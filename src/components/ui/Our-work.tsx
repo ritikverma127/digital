@@ -40,10 +40,10 @@ export default function TestimonialCard() {
           </div>
 
           <blockquote className="text-gray-700 text-lg">
-            "Taboola gave us another point of view in terms of the volume of
+            Taboola gave us another point of view in terms of the volume of
             content we create for our users. Instead of focusing solely on the
             conversion part of the funnel, we started seeing a bigger impact
-            from users inside that already play and engage with the game."
+            from users inside that already play and engage with the game.
           </blockquote>
 
           <div className="flex  gap-4 pt-4">

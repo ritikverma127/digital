@@ -1,7 +1,11 @@
 import React from "react";
 import { Phone, Menu } from "lucide-react";
+interface Data {
+  value: string;
+  description: string;
+}
 
-const StatCard = ({ value, description }) => (
+const StatCard = ({ value, description }: Data) => (
   <div className="group transition-all duration-300 hover:-translate-y-1">
     <div className="text-emerald-400 text-4xl lg:text-5xl xl:text-6xl font-bold mb-2 transition-colors duration-300 group-hover:text-emerald-300">
       {value}

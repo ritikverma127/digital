@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
@@ -137,7 +137,7 @@ export default function Navigation() {
                     </Link>
                   </div>
                 ))}
-                <div className="text-center pt-8">
+                {/* <div className="text-center pt-8">
                   <Link
                     href="/pages/contact"
                     onClick={() => setIsMenuOpen(false)}
@@ -146,7 +146,7 @@ export default function Navigation() {
                       Get Proposal
                     </Button>
                   </Link>
-                </div>
+                </div> */}
               </div>
             </nav>
           </div>
