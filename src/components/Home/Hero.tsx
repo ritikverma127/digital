@@ -11,9 +11,15 @@ export default function Page() {
       </main>
 
       <div className="relative max-w-4xl mx-auto space-y-14 mb-4 sm:space-y-4">
-        <div className="relative rounded-2xl overflow-hidden">
-          <video src="/Desktop.webm" autoPlay loop muted></video>
-          <div className="absolute inset-0 bg-[#1a3c61]/60 flex items-center justify-center"></div>
+        <div className="relative rounded-2xl overflow-hidden h-96 md:h-[32rem]">
+          <video
+            src="/video.mp4"
+            autoPlay
+            loop
+            muted
+            className="w-full h-full object-cover"
+          ></video>
+          {/* <div className="absolute inset-0 bg-[#1a3c61]/60 flex items-center justify-center"></div> */}
         </div>
         <h2 className="text-2xl md:text-3xl font-bold text-[#1a3c61] text-center mt-6">
           Run Ads on Premium Publisher Sites
