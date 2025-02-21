@@ -10,6 +10,7 @@ import {
   ScrollText,
   Mail,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function Service() {
   const services = [
@@ -97,12 +98,12 @@ export default function Service() {
             <CardContent className="space-y-4">
               <h3 className="text-xl font-bold">{service.title}</h3>
               <p className="text-muted-foreground">{service.description}</p>
-              <a
-                href="#"
+              <Link
+                href="/pages/contact"
                 className="inline-block text-[#FF6B35] hover:underline"
               >
                 Read More
-              </a>
+              </Link>
             </CardContent>
           </Card>
         ))}
