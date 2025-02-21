@@ -211,7 +211,7 @@ export default function Carousel() {
               key={index}
               className={`w-2 md:w-6 h-2 md:h-3 rounded-full transition-all duration-300 ${
                 index === currentSlide
-                  ? "bg-blue-800 w-6 md:h-3 md:w-12"
+                  ? "bg-blue-800 w-6 md:h-3 md:w-14"
                   : "bg-gray-300 dark:bg-gray-600"
               }`}
               onClick={() => setCurrentSlide(index)}

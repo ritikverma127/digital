@@ -90,7 +90,7 @@ const TestimonialCard = () => {
             </button>
             <div className="relative pt-[56.25%] w-full">
               <iframe
-                src="/video.mp4" // Replace with your video URL
+                src="/video.mp4"
                 className="absolute top-0 left-0 w-full h-full rounded-lg"
                 allowFullScreen
                 allow="autoplay; encrypted-media"
