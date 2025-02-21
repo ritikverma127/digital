@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -27,22 +28,25 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="text-white space-y-6">
-            <p className="text-sm uppercase tracking-wider">
+            {/* <p className="text-sm uppercase tracking-wider">
               DIGITAL MARKETING
-            </p>
+            </p> */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Manage digital marketing solution
+              Manage digital <br /> marketing solution
             </h1>
             <p className="text-gray-200 max-w-lg">
               Elevate your online presence with data-driven strategies, SEO, and
               targeted ads to maximize your growth and engagement.
             </p>
-            <Button
-              size="lg"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8"
-            >
-              Get Started
-            </Button>
+            <br />
+            <Link href="/pages/contact">
+              <Button
+                size="lg"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8"
+              >
+                Get Started
+              </Button>
+            </Link>
           </div>
 
           {/* Illustration */}

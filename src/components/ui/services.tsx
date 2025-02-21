@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { BarChart3, Globe2, Newspaper, Target } from "lucide-react";
+import Link from "next/link";
 
 // Define proper TypeScript interfaces
 interface FeatureCardProps {
@@ -72,25 +73,20 @@ const TaboolaLanding: React.FC = () => {
           <div className="flex flex-col justify-center space-y-8 lg:max-w-2xl">
             <div className="text-center lg:text-left">
               <h1 className="text-4xl font-bold tracking-tight text-[#1a2b49] md:text-5xl lg:text-6xl">
-                Get up to{" "}
-                <span className="text-blue-600">70% more conversions</span> with
-                Taboola
+                Maximize Reach &
+                <span className="text-blue-600"> Performance with</span>Taboola
+                Ads
               </h1>
             </div>
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-              <Button
-                size="lg"
-                className="bg-[#00ffcc] text-black hover:bg-[#00ffcc]/90 transform transition-transform duration-300 hover:scale-105"
-              >
-                Create Account
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-[#1a2b49] text-[#1a2b49] hover:bg-[#1a2b49] hover:text-white transform transition-transform duration-300 hover:scale-105"
-              >
-                Contact Sales
-              </Button>
+              <Link href="/pages/contact">
+                <Button
+                  size="lg"
+                  className="bg-[#00ffcc] text-black hover:bg-[#00ffcc]/90 transform transition-transform duration-300 hover:scale-105"
+                >
+                  Contact Sales
+                </Button>
+              </Link>
             </div>
           </div>
 

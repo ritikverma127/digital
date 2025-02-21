@@ -2,11 +2,12 @@ export default function Page() {
   return (
     <div className="container mx-auto px-4 py-4">
       <main className="max-w-6xl mx-auto text-center space-y-14 mb-4 sm:space-y-4 mt-16">
-        <h1 className="text-4xl md:text-6xl font-bold font-sans text-newPrimary tracking-tight">
-          Get Traffic That Converts.
+        <h1 className="text-4xl md:text-4xl  font-bold font-sans text-newPrimary tracking-tight">
+          Accelerate Growth with Digital Innovation
         </h1>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Your Ad Campaigns Seen by Millions Daily on Premium Publisher Sites
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          Leverage technology for smarter, faster, and sustainable business
+          growth. Stay ahead with future-proof strategies that drive results.
         </p>
       </main>
 

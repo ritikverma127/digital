@@ -74,7 +74,8 @@ export default function Service() {
     <div className="container mx-auto px-4 py-12">
       <div className="space-y-4 mb-16 flex items-center flex-col">
         <h1 className="text-4xl font-bold">
-          Degree Digital Marketing Services for Companies of All Kinds
+          Degree Digital Marketing Services for{" "}
+          <span className="text-blue-600">Companies</span> of All Kinds
         </h1>
         <p className="text-gray-600 text-center text-xl">
           As your value-driven digital marketing agency in India, we are here to
