@@ -72,12 +72,12 @@ export default function Service() {
 
   return (
     <div className="container mx-auto px-4 py-12">
-      <div className="space-y-4 mb-16 flex items-center flex-col">
+      <div className="space-y-4 mb-16 flex items-center flex-col text-center">
         <h1 className="text-4xl font-bold">
-          Degree Digital Marketing Services for{" "}
-          <span className="text-blue-600">Companies</span> of All Kinds
+          Degree Digital Marketing Services for
+          <span className="text-blue-600"> Companies</span> of All Kinds
         </h1>
-        <p className="text-gray-600 text-center text-xl">
+        <p className="text-gray-600 text-xl">
           As your value-driven digital marketing agency in India, we are here to
           meet all your brand&rsquo;s advertising needs with our expert-level
           services.
@@ -85,6 +85,7 @@ export default function Service() {
           allow you to grow your business immensely.
         </p>
       </div>
+
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {services.map((service, index) => (
           <Card
