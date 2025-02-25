@@ -13,8 +13,8 @@ const VerticalAutoImageSlider = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const [touchStart, setTouchStart] = useState<number | null | undefined>(null);
-  const [touchEnd, setTouchEnd] = useState<number | null | undefined>(null);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const sliderRef = useRef(null);
 
   // Function to move to the next slide
@@ -43,11 +43,9 @@ const VerticalAutoImageSlider = ({
         nextSlide();
       }, interval);
 
-      return () => {
-        clearInterval(timer);
-      };
+      return () => clearInterval(timer);
     }
-  }, [interval, isPaused, nextSlide, prevSlide]);
+  }, [interval, isPaused, nextSlide]); // Fixed dependencies (prevSlide hata diya)
 
   // Handle touch events for swipe
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
@@ -56,11 +54,10 @@ const VerticalAutoImageSlider = ({
 
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     setTouchEnd(e.targetTouches[0].clientY);
-    nextSlide();
   };
 
   const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return;
+    if (touchStart === null || touchEnd === null) return;
     const distance = touchStart - touchEnd;
     const isSwipeDown = distance < -50;
     const isSwipeUp = distance > 50;

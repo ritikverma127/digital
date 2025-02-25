@@ -4,9 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import dynamic from "next/dynamic";
 
-const VerticalAutoImageSlider = lazy(
-  () => import("../../../components/ui/AutoImageslider")
+const VerticalAutoImageSlider = dynamic(
+  () => import("../../../components/ui/AutoImageslider"),
+  {
+    ssr: false,
+  }
 );
 
 export default function ContactPage() {
@@ -17,6 +21,9 @@ export default function ContactPage() {
     "/contact1.jpg",
     "/contact2.jpg",
   ];
+  const HandleSubmit = (e: any) => {
+    e.preventDefault();
+  };
 
   return (
     <div className="flex flex-col md:flex-row h-[calc(100vh-82px)] overflow-hidden">
@@ -28,17 +35,15 @@ export default function ContactPage() {
               Contact Us
               <div className="h-1 w-20 md:w-36 bg-blue-400 mx-auto mt-1"></div>
             </h1>
-            {/* <h2 className="text-lg md:text-2xl font-bold mb-3">
-              Let&apos;s get in touch!
-            </h2> */}
           </div>
-          <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
+          <form onSubmit={HandleSubmit} className="space-y-4">
             <div>
               <Label htmlFor="name" className="font-bold text-xl">
                 Name <span className="text-red-500">*</span>
               </Label>
               <Input
                 id="name"
+                type="text"
                 placeholder="Your name"
                 required
                 name="name"

@@ -2,9 +2,13 @@
 // import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import dynamic from "next/dynamic";
 import Navbar from "@/components/navbar/Navbar";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
-import Footer from "@/components/ui/Footer";
+
+const Footer = dynamic(() => import("@/components/ui/Footer"), {
+  ssr: false,
+});
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { usePathname } from "next/navigation";
 const queryClient = new QueryClient();
