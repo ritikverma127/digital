@@ -13,7 +13,7 @@ const TestimonialCard = () => {
     <>
       <div className="max-w-7xl mx-auto px-4 py-24 space-y-8 sm:space-y-28">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-[#003366] mb-12">
-          Brands find success with Taboola
+          Brands find success with Digitalize
         </h2>
 
         <div className="grid md:grid-cols-2 gap-20 items-center">
@@ -22,7 +22,7 @@ const TestimonialCard = () => {
             <div className="relative w-full h-full">
               <Image
                 src="/digitalize.webp"
-                alt="Taboola campaign interface"
+                alt="Digitalize campaign interface"
                 fill
                 className="object-cover"
               />
@@ -51,7 +51,7 @@ const TestimonialCard = () => {
             </div>
 
             <blockquote className="text-gray-700 text-lg">
-              Taboola gave us another point of view in terms of the volume of
+              Digitalize gave us another point of view in terms of the volume of
               content we create for our users. Instead of focusing solely on the
               conversion part of the funnel, we started seeing a bigger impact
               from users inside that already play and engage with the game.

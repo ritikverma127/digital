@@ -29,7 +29,7 @@ export default function HeroSection() {
                 animateIn ? "animate-pulse" : ""
               }`}
             />
-            <span className="text-xl font-semibold">Taboola </span>
+            <span className="text-xl font-semibold">Digitalize </span>
           </div>
         </div>
 
@@ -42,12 +42,12 @@ export default function HeroSection() {
           <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">
             Get started to up your
             <br className="hidden sm:block" />
-            business with Taboola
+            business with Digitalize
           </h1>
 
           <p className="mt-4 text-lg text-gray-600 max-w-xl mx-auto">
-            Elevate your productivity and streamline your workflow with Taboola,
-            your intelligent AI assistant.
+            Elevate your productivity and streamline your workflow with
+            Digitalize, your intelligent AI assistant.
           </p>
 
           <form

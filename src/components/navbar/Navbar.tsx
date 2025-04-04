@@ -36,7 +36,9 @@ export default function Navigation() {
                 height={50}
                 className="h-12 w-auto"
               /> */}
-              <div className="text-newPrimary font-bold text-2xl">Taboola</div>
+              <div className="text-newPrimary font-bold text-2xl">
+                Digitalize
+              </div>
             </Link>
           </div>
 
