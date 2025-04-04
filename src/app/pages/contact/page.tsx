@@ -1,5 +1,4 @@
 "use client";
-import { lazy } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -21,9 +20,6 @@ export default function ContactPage() {
     "/contact1.jpg",
     "/contact2.jpg",
   ];
-  const HandleSubmit = (e: any) => {
-    e.preventDefault();
-  };
 
   return (
     <div className="flex flex-col md:flex-row h-[calc(100vh-82px)] overflow-hidden">
@@ -36,7 +32,7 @@ export default function ContactPage() {
               <div className="h-1 w-20 md:w-36 bg-blue-400 mx-auto mt-1"></div>
             </h1>
           </div>
-          <form onSubmit={HandleSubmit} className="space-y-4">
+          <form className="space-y-4">
             <div>
               <Label htmlFor="name" className="font-bold text-xl">
                 Name <span className="text-red-500">*</span>

@@ -1,9 +1,8 @@
 "use client";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
-import Loader from "../ui/loader";
-import { useRef, useState } from "react";
 import { products } from "../../components/blogs/BlogData";
+import { useState } from "react";
 interface BlogPost {
   title: string;
   image: string;
@@ -11,8 +10,7 @@ interface BlogPost {
 }
 
 export default function BlogGrid() {
-  const [page, setPage] = useState(products);
-  const loaderRef = useRef<HTMLDivElement>(null);
+  const [page] = useState(products);
 
   return (
     <div className="container mx-auto px-4 py-12">
